@@ -14,5 +14,22 @@
         <h3>Файл прочитан, первые 500 символов:</h3>
         <pre>{{ text }}</pre>
     {% endif %}
+    {% if table %}
+        <h3>Top 50 слов по IDF:</h3>
+        <table border="1">
+            <tr>
+                <th>Слово</th>
+                <th>TF</th>
+                <th>IDF</th>
+            </tr>
+            {% for row in table %}
+            <tr>
+                <td>{{ row.word }}</td>
+                <td>{{ row.tf }}</td>
+                <td>{{ "%.5f"|format(row.idf) }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% endif %}
 </body>
 </html>
