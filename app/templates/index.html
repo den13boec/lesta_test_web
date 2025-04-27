@@ -9,13 +9,8 @@
         <input type="file" name="file" required>
         <button type="submit">Загрузить</button>
     </form>
-
-    {% if text %}
-        <h3>Файл прочитан, первые 500 символов:</h3>
-        <pre>{{ text }}</pre>
-    {% endif %}
     {% if table %}
-        <h3>Top 50 слов по IDF:</h3>
+        <h3>Топ 50 слов по IDF:</h3>
         <table border="1">
             <tr>
                 <th>Слово</th>
